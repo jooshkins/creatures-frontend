@@ -27,4 +27,3 @@ yarn-error.log*
 /amplify
 .amplifyrc
 /.sass-cache
-/src/index.css.map
