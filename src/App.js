@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { Auth } from "aws-amplify";
 import Routes from './Routes'
 import Footer from './Containers/Components/Footer'
+import Emoji from './Containers/Components/Emoji'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSyncAlt, faBars, faInfoCircle, faQrcode } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -77,14 +78,14 @@ class App extends Component {
                 <Nav vertical >
                   <NavLink href="/" >
                     <h1>
-                    <span role="img" aria-label="About">ℹ</span> About
+                      <Emoji label="About" emoji="ℹ" /> About
                     </h1>
                   </NavLink>
                   {this.state.isAuthenticated
                     ? <Fragment>
                       <NavLink href="/scan">
                       <h1>
-                        <span role="img" aria-label="scooter">🛴</span> Ride
+                        <Emoji label="scooter" emoji="🛴" /> Ride
                       </h1>
                       </NavLink>
                       <NavLink onClick={this.handleLogout} href="#">
