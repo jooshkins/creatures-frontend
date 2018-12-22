@@ -78,7 +78,7 @@ class App extends Component {
                 <Nav vertical >
                   <NavLink href="/" >
                     <h1>
-                      <Emoji label="About" emoji="ℹ" /> About
+                      <Emoji label="question mark" emoji="❓" className="pr-3" /> About
                     </h1>
                   </NavLink>
                   {this.state.isAuthenticated
@@ -90,14 +90,14 @@ class App extends Component {
                       </NavLink>
                       <NavLink onClick={this.handleLogout} href="#">
                       <h1>
-                       <span role="img" aria-label="bye">👋🏼</span> Logout
+                        <Emoji label="bye" emoji="👋🏼" /> Logout
                       </h1>
                       </NavLink>
                     </Fragment>
                     : <Fragment>
                       <NavLink href="/login">
                       <h1>
-                      <span role="img" aria-label="key">🗝</span>  Login
+                        <Emoji label="key" emoji="🔑" /> Login
                       </h1>
                       </NavLink>
                     </Fragment>
