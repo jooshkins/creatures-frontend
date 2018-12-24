@@ -71,7 +71,7 @@ export default class Stopwatch extends Component {
   render() {
     const { isRunning, isDone, time, hideTime, nextTime } = this.state;
     return (
-      <div className="center">
+      <div className="text-center">
         <Card className="shadow-lg border border-danger" color="dark">
         <CardHeader tag="h3">Ride Time:</CardHeader>
           <CardBody>

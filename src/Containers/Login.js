@@ -45,11 +45,10 @@ export default class Login extends Component {
                 <SmallHeader />
                 <Row className="mb-3">
                     <Col sm="12" md={{ size: 6, offset: 3 }}>
-                        {/* <a href="/signup"></a> */}
                         <Button href="/signup">Don't have an account?</Button>
                     </Col>
                 </Row>
-                <Row>
+                <Row id="LoginRow">
                     <Col sm="12" md={{ size: 4, offset: 4 }}>
                         <Form onSubmit={this.handleSubmit} className="Login">
                         <Card className="shadow-lg border border-danger" color="dark">

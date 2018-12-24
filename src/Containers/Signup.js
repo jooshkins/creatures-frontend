@@ -21,8 +21,8 @@ export default class Signup extends Component {
 
     validateForm() {
         return (
-            this.state.email.length > 0 &&
-            this.state.password.length > 0 &&
+            this.state.email.length > 6 &&
+            this.state.password.length > 7 &&
             this.state.password === this.state.confirmPassword &&
             this.state.agree === true
         );
@@ -79,7 +79,7 @@ export default class Signup extends Component {
         return (
             <Row>
                 <SmallHeader />
-                <Col sm="12" md={{ size: 6, offset: 3 }}>
+                <Col id="SignupCol" sm="12" md={{ size: 6, offset: 3 }}>
                     <Form onSubmit={this.handleConfirmationSubmit}>
                     <Card>
                         <CardHeader tag="h3">
@@ -125,7 +125,7 @@ export default class Signup extends Component {
                         <Button href="/login">Already have an account?</Button>
                     </Col>
                 </Row>
-                <Row>
+                <Row id="LoginRow">
                     <Col sm="12" md={{ size: 4, offset: 4 }}>
                         <Form onSubmit={this.handleSubmit}>
                             <Card className="shadow-lg border border-danger" color="dark">
@@ -159,7 +159,7 @@ export default class Signup extends Component {
                                             type="password"
                                         />
                                     </FormGroup>
-                                    <Label check className="mb-3">
+                                    <Label check className="mb-3 ml-3">
                                         <Input type="checkbox" id="agree" onChange={this.handleChange}/>{' '}
                                         I agree to the <a href="/terms">terms of service</a> and <a href="/privacy">privacy policy</a>
                                     </Label>

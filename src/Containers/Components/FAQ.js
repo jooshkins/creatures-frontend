@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem, UncontrolledCollapse, ListGroupItemText } from 'reactstrap';
 import  Emoji  from './Emoji';
+import Caret from './Caret';
 import content  from '../../Assets/content.json' 
 
 const q = content.questions
@@ -15,8 +16,9 @@ const CombineFAQ = () => {
     } else {
         for (let i = 0; i < q.length; i++) {
             combine.push(
-                <ListGroupItem color="dark" tag="button" action id={'q' + i}>
-                    <b>{q[i]}</b>
+                <ListGroupItem >
+                    <b>{q[i]}</b> 
+                    <Caret id={i} />
                     <UncontrolledCollapse toggler={'#q' + i}>
                         <ListGroupItemText>
                             {a[i]}

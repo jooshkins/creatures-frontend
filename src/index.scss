@@ -44,8 +44,68 @@ html, body {
 
 #footer {
   position: absolute;
-  bottom: 0;
   width: 100%;
+  bottom: 0;
+}
+
+#LoginRow {
+  padding-bottom: 2rem;
+
+  @media only screen and (max-width: 350px) {
+    padding-bottom: 4.5rem;
+  }
+}
+
+#SmallHeader {
+  width: 75%; /* For mobile phones: */
+  margin-bottom: 1rem;
+  
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 3rem;
+    width: 50%; /* For desktop: */
+  }
+}
+
+.StatementCardTxt {
+  padding-left: 1rem;
+  @media only screen and (min-width: 768px) {
+    padding-left: 3rem;
+  }
+}
+
+.StatementCardContainer {
+  padding-left: 0rem;
+  @media only screen and (min-width: 768px) {
+    padding-left: 5rem;
+  }
+}
+
+.faq-col {
+  padding: 1rem 0rem 1rem 0rem;
+  @media only screen and (min-width: 992px) {
+    padding-right: 3rem !important
+  }
+}
+
+.about-row {
+  border-radius: 1.2rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+
+  @media only screen and (min-width: 768px) {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
+.caret{
+  transform: rotate(90deg);
+  transition: transform 0.25s linear;
+}
+
+.caret.open{
+  transform: rotate(0deg);
+  transition: transform 0.25s linear;
 }
 
 .App {
@@ -128,10 +188,6 @@ html, body {
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.center {
-  text-align: center;
 }
 
 .lightBg {

@@ -6,9 +6,9 @@ import Routes from './Routes'
 import Footer from './Containers/Components/Footer'
 import Emoji from './Containers/Components/Emoji'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSyncAlt, faBars, faInfoCircle, faQrcode } from '@fortawesome/free-solid-svg-icons'
+import { faSyncAlt, faBars, faInfoCircle, faQrcode, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-library.add(faSyncAlt, faBars, faInfoCircle, faQrcode)
+library.add(faSyncAlt, faBars, faInfoCircle, faQrcode, faCaretRight)
 
 class App extends Component {
   constructor(props) {
@@ -78,7 +78,7 @@ class App extends Component {
                 <Nav vertical >
                   <NavLink href="/" >
                     <h1>
-                      <Emoji label="question mark" emoji="❓" className="pr-3" /> About
+                      <Emoji label="question mark" emoji="❓" minWidth="54px"/> About
                     </h1>
                   </NavLink>
                   {this.state.isAuthenticated
@@ -97,7 +97,7 @@ class App extends Component {
                     : <Fragment>
                       <NavLink href="/login">
                       <h1>
-                        <Emoji label="key" emoji="🔑" /> Login
+                        <Emoji label="key" emoji="🔑"/> Login
                       </h1>
                       </NavLink>
                     </Fragment>
