@@ -16,9 +16,9 @@ const CombineFAQ = () => {
     } else {
         for (let i = 0; i < q.length; i++) {
             combine.push(
-                <ListGroupItem >
+                <ListGroupItem color="secondary">
                     <b>{q[i]}</b> 
-                    <Caret id={i} />
+                    <Caret id={i} color="link" />
                     <UncontrolledCollapse toggler={'#q' + i}>
                         <ListGroupItemText>
                             {a[i]}
@@ -36,12 +36,12 @@ class FAQ extends Component {
     render() {
         return (
             <div>
-            <h2 className="text-danger mb-3">
-                <Emoji label="confused woman" emoji="🤷‍" /> FAQ <Emoji label="confused woman" emoji="🤷‍" />
-            </h2>
-            <ListGroup className="text-left">
-                <CombineFAQ />
-            </ListGroup>
+                <h2 className="text-danger mb-3">
+                    <Emoji label="confused woman" emoji="🤷‍" /> FAQ <Emoji label="confused woman" emoji="🤷‍" />
+                </h2>
+                <ListGroup className="text-left">
+                    <CombineFAQ />
+                </ListGroup>
             </div>
         );
     }

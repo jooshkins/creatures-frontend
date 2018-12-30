@@ -17,29 +17,31 @@ const dev = {
   }
 }
   
-const prod = {
-  Auth: {
-    mandatorySignIn: true,
-    region: "",
-    userPoolId: "" ,
-    identityPoolId: "",
-    userPoolWebClientId: ""
-  },
-  API: {
-    endpoints: [
-      {
-        name: "",
-        endpoint: "",
-        region: ""
-      },
-    ]
-  }
-};
+// const prod = {
+//   Auth: {
+//     mandatorySignIn: true,
+//     region: "",
+//     userPoolId: "" ,
+//     identityPoolId: "",
+//     userPoolWebClientId: ""
+//   },
+//   API: {
+//     endpoints: [
+//       {
+//         name: "",
+//         endpoint: "",
+//         region: ""
+//       },
+//     ]
+//   }
+// };
   
-// Default to dev if not set
-const config = process.env.REACT_APP_STAGE === 'prod'
-  ? prod
-  : dev;
+// // Default to dev if not set
+// const config = process.env.REACT_APP_STAGE === 'prod'
+//   ? prod
+//   : dev;
+
+const config = dev;
 
 export default {
   // Add common config values here

@@ -4,8 +4,8 @@ import Controls from './Controls';
 import { API } from "aws-amplify";
 import { Card, CardBody, CardHeader, CardFooter } from "reactstrap";
 
-const updateTime = parseInt(process.env.REACT_APP_UPDATEINTERVAL);
-const lockoutTime = parseInt(process.env.REACT_APP_LOCKOUT_TIME);
+const updateTime = parseInt(process.env.REACT_APP_UPDATEINTERVAL, 10);
+const lockoutTime = parseInt(process.env.REACT_APP_LOCKOUT_TIME, 10);
 
 function getDefaultState() {
   return {

@@ -12,12 +12,13 @@ $border-radius:               1.2rem;
 $border-radius-lg:            1.2rem;
 $border-radius-sm:            1.2rem;
 $enable-shadows: true;
+$link-color:                #E84E2E; 
 $theme-colors: (
   primary: #1080DB,
   danger: #E84E2E,
   success: #A1CE57,
   secondary: #4E4E74,
-  warning: #EAC031
+  warning: #EAC031,
 );
 
 @mixin transform($property) {
@@ -30,6 +31,7 @@ html, body {
   padding:0;
   height:100%;
 }
+
 
 #root {
   min-height:100%;

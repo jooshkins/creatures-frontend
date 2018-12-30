@@ -22,7 +22,7 @@ export default class Caret extends Component {
         return (
             <Button
             className="float-right"
-            color="link"
+            color={this.props.color}
             id={'q' + this.props.id}
             onTouchStart={this.toggle}
             onClick={this.toggle}
