@@ -21,7 +21,7 @@ export default class Signup extends Component {
 
     validateForm() {
         return (
-            this.state.email.length > 6 &&
+            this.state.email.length > 5 &&
             this.state.password.length > 7 &&
             this.state.password === this.state.confirmPassword &&
             this.state.agree === true
@@ -102,7 +102,6 @@ export default class Signup extends Component {
                             <CardFooter>
                                 <LoaderButton
                                     block
-                                    bsSize="large"
                                     disabled={!this.validateConfirmationForm()}
                                     type="submit"
                                     isLoading={this.state.isLoading}

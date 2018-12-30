@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import About from './Containers/About'
 import Login from './Containers/Login'
 import Signup from './Containers/Signup'
+import ResetPassword from './Containers/ResetPassword';
 import Legal from './Containers/Legal'
 import Scan from './Containers/Scan'
 import NotFound from "./Containers/NotFound";
@@ -28,6 +29,12 @@ export default ({ childProps }) => (
             exact
             path="/signup"
             component={Signup}
+            props={childProps}
+        />
+        <UnAuthRoute
+            path="/login/reset"
+            exact
+            component={ResetPassword}
             props={childProps}
         />
         <AuthRoute
