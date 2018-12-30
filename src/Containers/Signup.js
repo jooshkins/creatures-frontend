@@ -77,42 +77,45 @@ export default class Signup extends Component {
 
     renderConfirmationForm() {
         return (
-            <Row>
+            <div>
                 <SmallHeader />
-                <Col id="SignupCol" sm="12" md={{ size: 6, offset: 3 }}>
-                    <Form onSubmit={this.handleConfirmationSubmit}>
-                    <Card>
-                        <CardHeader tag="h3">
-                            Confirmation Code
-                        </CardHeader>
-                        <CardBody>
-                            <FormGroup id="confirmationCode">
-                                <Label  for="confirmationCode">Confirmation Code</Label>
-                                <Input
-                                    id="confirmationCode"
-                                    autoFocus
-                                    type="tel"
-                                    value={this.state.confirmationCode}
-                                    onChange={this.handleChange}
+                <Row id="LoginRow">
+                    <Col sm="12" md={{ size: 4, offset: 4 }}>
+                        <Form onSubmit={this.handleConfirmationSubmit}>
+                        <Card className="shadow-lg border border-danger" color="dark">
+                            <CardHeader tag="h3">
+                                Confirmation Code
+                            </CardHeader>
+                            <CardBody>
+                                <FormGroup id="confirmationCode">
+                                    <Label  for="confirmationCode">Confirmation Code</Label>
+                                    <Input
+                                        id="confirmationCode"
+                                        autoFocus
+                                        type="tel"
+                                        value={this.state.confirmationCode}
+                                        onChange={this.handleChange}
+                                    />
+                                    <div>Please check your email for the code.</div>
+                                </FormGroup>
+                            </CardBody>
+                            <CardFooter>
+                                <LoaderButton
+                                    block
+                                    bsSize="large"
+                                    disabled={!this.validateConfirmationForm()}
+                                    type="submit"
+                                    isLoading={this.state.isLoading}
+                                    text="Verify"
+                                    loadingText="Verifying…"
+                                    color="success"
                                 />
-                                <div>Please check your email for the code.</div>
-                            </FormGroup>
-                        </CardBody>
-                        <CardFooter>
-                            <LoaderButton
-                                block
-                                bsSize="large"
-                                disabled={!this.validateConfirmationForm()}
-                                type="submit"
-                                isLoading={this.state.isLoading}
-                                text="Verify"
-                                loadingText="Verifying…"
-                            />
-                        </CardFooter>
-                    </Card>
-                    </Form>
-                </Col>
-            </Row>
+                            </CardFooter>
+                        </Card>
+                        </Form>
+                    </Col>
+                </Row>
+            </div>
         );
     }
 

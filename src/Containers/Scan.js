@@ -73,7 +73,7 @@ export default class Scan extends Component {
     }
 
     checkScooterStatus(scooterId) {
-        return API.get(process.env.REACT_APP_API_GATEWAY_NAME, `/scooter/${scooterId}`);
+        return API.get(process.env.REACT_APP_DEV_API_GATEWAY_NAME, `/scooter/${scooterId}`);
     }
 
     startRide = () => {
@@ -86,7 +86,7 @@ export default class Scan extends Component {
         return (
             <div>
                 <SmallHeader />
-                <Row>
+                <Row id="LoginRow">
                     <Col sm="12" md={{ size: 4, offset: 4 }}>
                     {
                         this.state.rideStarted 
@@ -142,7 +142,7 @@ export default class Scan extends Component {
                                     disabled={!this.validateForm()}
                                     type="submit"
                                     isLoading={this.state.isLoading}
-                                    text={`Check ${process.env.REACT_APP_SCOOTER_TERM} Status`}
+                                    text={`Identify ${process.env.REACT_APP_SCOOTER_TERM}`}
                                     loadingText="Checking ID"
                                 />
                                 </CardFooter>

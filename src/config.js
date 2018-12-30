@@ -1,36 +1,47 @@
 const dev = {
-    apiGateway: {
-      REGION: process.env.REACT_APP_DEV_API_GATEWAY_REGION,
-      URL: process.env.REACT_APP_DEV_API_GATEWAY_URL
-    },
-    cognito: {
-      REGION: process.env.REACT_APP_DEV_COGNITO_REGION,
-      USER_POOL_ID: process.env.REACT_APP_DEV_COGNITO_USER_POOL_ID,
-      APP_CLIENT_ID: process.env.REACT_APP_DEV_COGNITO_APP_CLIENT_ID,
-      IDENTITY_POOL_ID: process.env.REACT_APP_DEV_COGNITO_IDENTITY_POOL_ID
-    }
-  };
-  
-  const prod = {
-    apiGateway: {
-        REGION: process.env.REACT_APP_PRO_API_GATEWAY_REGION,
-        URL: process.env.REACT_APP_PRO_API_GATEWAY_URL
+  Auth: {
+    mandatorySignIn: true,
+    region: "us-east-2",
+    userPoolId: "us-east-2_KXeJhZQrE" ,
+    identityPoolId: "us-east-2:978110fd-c0d4-4d4f-b9ce-e6367799c567",
+    userPoolWebClientId: "6mdnkli0enkqk7g8g4jo023arb"
+  },
+  API: {
+    endpoints: [
+      {
+        name: "dev-scooter-backend-iac",
+        endpoint: "https://7thxsnvbc9.execute-api.us-east-2.amazonaws.com/dev",
+        region: "us-east-2"
       },
-      cognito: {
-        REGION: process.env.REACT_APP_PRO_COGNITO_REGION,
-        USER_POOL_ID: process.env.REACT_APP_PRO_COGNITO_USER_POOL_ID,
-        APP_CLIENT_ID: process.env.REACT_APP_PRO_COGNITO_APP_CLIENT_ID,
-        IDENTITY_POOL_ID: process.env.REACT_APP_PRO_COGNITO_IDENTITY_POOL_ID
-      }
-    };
+    ]
+  }
+}
   
-  // Default to dev if not set
-  const config = process.env.REACT_APP_STAGE === 'prod'
-    ? prod
-    : dev;
+const prod = {
+  Auth: {
+    mandatorySignIn: true,
+    region: "",
+    userPoolId: "" ,
+    identityPoolId: "",
+    userPoolWebClientId: ""
+  },
+  API: {
+    endpoints: [
+      {
+        name: "",
+        endpoint: "",
+        region: ""
+      },
+    ]
+  }
+};
   
-  export default {
-    // Add common config values here
+// Default to dev if not set
+const config = process.env.REACT_APP_STAGE === 'prod'
+  ? prod
+  : dev;
 
-    ...config
-  };
+export default {
+  // Add common config values here
+  ...config
+};

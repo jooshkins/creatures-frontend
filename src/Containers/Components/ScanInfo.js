@@ -7,11 +7,11 @@ export default () => {
         <Card className="mt-3">
             <CardImg top src={scanCard} />
             <CardBody className="Rokkitt text-dark width-50">
-                <CardTitle><h3>EYE</h3></CardTitle>
-                <CardText className="text-justify lead text-bold">
+                <CardTitle><h3>zI</h3></CardTitle>
+                <CardText className="text-left lead text-bold">
                     <ul>
                         <li>
-                            Creature Type: Elemental Ancient
+                            Creature Type: <br />Elemental Ancient
                         </li>
                         <li>
                             Mobility: Manual

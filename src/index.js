@@ -6,25 +6,8 @@ import registerServiceWorker from './registerServiceWorker';
 import Amplify from "aws-amplify";
 import config from "./config";
 import './index.css';
-
-Amplify.configure({
-    Auth: {
-      mandatorySignIn: true,
-      region: config.cognito.REGION,
-      userPoolId: config.cognito.USER_POOL_ID,
-      identityPoolId: config.cognito.IDENTITY_POOL_ID,
-      userPoolWebClientId: config.cognito.APP_CLIENT_ID
-    },
-    API: {
-      endpoints: [
-        {
-          name: process.env.REACT_APP_API_GATEWAY_NAME,
-          endpoint: config.apiGateway.URL,
-          region: config.apiGateway.REGION
-        },
-      ]
-    }
-  });
+  
+Amplify.configure( config );
 
 ReactDOM.render(
     <Router>

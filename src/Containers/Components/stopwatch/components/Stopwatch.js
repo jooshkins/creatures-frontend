@@ -4,6 +4,9 @@ import Controls from './Controls';
 import { API } from "aws-amplify";
 import { Card, CardBody, CardHeader, CardFooter } from "reactstrap";
 
+const updateTime = parseInt(process.env.REACT_APP_UPDATEINTERVAL);
+const lockoutTime = parseInt(process.env.REACT_APP_LOCKOUT_TIME);
+
 function getDefaultState() {
   return {
     isRunning: false,
@@ -34,7 +37,7 @@ export default class Stopwatch extends Component {
         isRunning: true
       }, () => {
         this.timerRef = setInterval(
-          () => { this.updateTimer(process.env.REACT_APP_UPDATEINTERVAL) }, process.env.REACT_APP_UPDATEINTERVAL
+          () => { this.updateTimer(updateTime) }, updateTime
         )
       });
     } catch (e) {
@@ -45,7 +48,7 @@ export default class Stopwatch extends Component {
   stop = async event => {
     try {
       await this.checkScooterIn(this.props.scooterId);
-      let convertTime = new Date(Date.now() + process.env.REACT_APP_LOCKOUT_TIME).toLocaleTimeString('en-US')
+      let convertTime = new Date(Date.now() + lockoutTime).toLocaleTimeString('en-US')
       this.setState({
         isRunning: false,
         isDone: true,
@@ -61,11 +64,11 @@ export default class Stopwatch extends Component {
   }
 
   checkoutScooter(scooterId) {
-    return API.put("scooters", `/checkOut/${scooterId}`);
+    return API.put(process.env.REACT_APP_API_GATEWAY_NAME, `/checkOut/${scooterId}`);
   }
 
   checkScooterIn(scooterId) {
-    return API.put("scooters", `/scooter/${scooterId}`);
+    return API.put(process.env.REACT_APP_API_GATEWAY_NAME, `/scooter/${scooterId}`);
   }
 
   render() {
@@ -77,7 +80,7 @@ export default class Stopwatch extends Component {
           <CardBody>
             <Timer time={time} />
             <div className={hideTime}>
-              <h4>The earliest you can checkout this {process.env.REACT_APP_CONTACT_EMAIL} again is: {nextTime}</h4>
+              <h4>The earliest you can checkout this {process.env.REACT_APP_SCOOTER_TERM} again is: {nextTime}</h4>
             </div>
           </CardBody>
           <CardFooter>

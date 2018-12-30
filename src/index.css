@@ -41,9 +41,11 @@ html, body {
       padding-left: 3rem; } }
 
 .StatementCardContainer {
+  padding-top: 0rem;
   padding-left: 0rem; }
   @media only screen and (min-width: 768px) {
     .StatementCardContainer {
+      padding-top: 3rem;
       padding-left: 5rem; } }
 
 .faq-col {
