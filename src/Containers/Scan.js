@@ -35,6 +35,7 @@ export default class Scan extends Component {
         if (scan) {
             this.setState({ code: scan })
             this.toggle()
+            this.validateForm()
         }
     }
 

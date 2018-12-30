@@ -64,11 +64,11 @@ export default class Stopwatch extends Component {
   }
 
   checkoutScooter(scooterId) {
-    return API.put(process.env.REACT_APP_API_GATEWAY_NAME, `/checkOut/${scooterId}`);
+    return API.put(process.env.REACT_APP_DEV_API_GATEWAY_NAME, `/checkOut/${scooterId}`);
   }
 
   checkScooterIn(scooterId) {
-    return API.put(process.env.REACT_APP_API_GATEWAY_NAME, `/scooter/${scooterId}`);
+    return API.put(process.env.REACT_APP_DEV_API_GATEWAY_NAME, `/scooter/${scooterId}`);
   }
 
   render() {
