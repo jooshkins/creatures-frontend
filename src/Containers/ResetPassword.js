@@ -85,6 +85,7 @@ export default class ResetPassword extends Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
+            <hr />
             <LoaderButton
               block
               type="submit"
@@ -133,6 +134,7 @@ export default class ResetPassword extends Component {
                 value={this.state.confirmPassword}
               />
             </FormGroup>
+            <hr />
             <LoaderButton
               block
               type="submit"

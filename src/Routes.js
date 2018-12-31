@@ -32,7 +32,7 @@ export default ({ childProps }) => (
             props={childProps}
         />
         <UnAuthRoute
-            path="/login/reset"
+            path="/reset"
             exact
             component={ResetPassword}
             props={childProps}

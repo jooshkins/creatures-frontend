@@ -77,7 +77,7 @@ export default class Login extends Component {
                                         onChange={this.handleChange}
                                     />
                                 </FormGroup>
-                                <Link to="/login/reset">Forgot password?</Link>
+                                <Link to="/reset">Forgot password?</Link>
                             </CardBody>
                             <CardFooter>
                             <LoaderButton
