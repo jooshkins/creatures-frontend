@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Row, Col, Card, CardBody, CardHeader, CardFooter, Button } from 'reactstrap';
 import { Auth } from "aws-amplify";
+import { Link } from "react-router-dom";
 import LoaderButton from "./Components/LoaderButton"
 import SmallHeader from "./Components/SmallHeader"
 
@@ -76,7 +77,7 @@ export default class Login extends Component {
                                         onChange={this.handleChange}
                                     />
                                 </FormGroup>
-                                <a href="/login/reset">Forgot password?</a>
+                                <Link to="/login/reset">Forgot password?</Link>
                             </CardBody>
                             <CardFooter>
                             <LoaderButton

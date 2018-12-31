@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
-import { Form, FormGroup, Label, Input, Row, Col, Card, CardHeader, CardBody, CardFooter } from "reactstrap";
+import { Form, FormGroup, Label, Input, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
 import LoaderButton from "./Components/LoaderButton"
 import SmallHeader from "./Components/SmallHeader"
+import Emoji from './Components/Emoji'
 
 export default class ResetPassword extends Component {
     constructor(props) {
@@ -146,9 +147,8 @@ export default class ResetPassword extends Component {
       
     renderSuccessMessage() {
     return (
-        <div className="success">
-        {/* <Glyphicon glyph="ok" /> */}
-        <p>Your password has been reset.</p>
+        <div>
+        <h4><Emoji emoji="🎉"/> Your password has been reset. <Emoji emoji="🎉"/></h4>
         <p>
             <Link to="/login">
             Click here to login with your new credentials.
@@ -166,11 +166,11 @@ export default class ResetPassword extends Component {
                 <Card className="shadow-lg border border-danger" color="dark">
                     <CardHeader tag="h3">Reset Password</CardHeader>
                     <CardBody>
-                        {!this.state.codeSent
-                        ? this.renderRequestCodeForm()
-                        : !this.state.confirmed
-                        ? this.renderConfirmationForm()
-                        : this.renderSuccessMessage()}
+                    {!this.state.codeSent
+                      ? this.renderRequestCodeForm()
+                      : !this.state.confirmed
+                      ? this.renderConfirmationForm()
+                      : this.renderSuccessMessage()}
                     </CardBody>
                 </Card>
                 </Col>
