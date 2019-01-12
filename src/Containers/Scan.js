@@ -52,24 +52,28 @@ export default class Scan extends Component {
     handleSubmit = async event => {
         event.preventDefault();
         this.setState({ isLoading: true });
-
         try {
-            const scooter = await this.checkScooterStatus(this.state.code);
-
-            if (scooter.status) {
-                if (scooter.nextTime) {
-                    let convertTime = new Date(scooter.nextTime).toLocaleTimeString('en-US')
-                    alert(`You must wait until: ${convertTime} before you can check out this ${process.env.REACT_APP_SCOOTER_TERM} again!`)
-                    this.setState({ isLoading: false })
-                } else {
-                    this.setState({ checkedOut: true });
+            this.getLocation();
+            try {
+                const scooter = await this.checkScooterStatus(this.state.code);
+    
+                if (scooter.status) {
+                    if (scooter.nextTime) {
+                        let convertTime = new Date(scooter.nextTime).toLocaleTimeString('en-US')
+                        alert(`You must wait until: ${convertTime} before you can check out this ${process.env.REACT_APP_SCOOTER_TERM} again!`)
+                        this.setState({ isLoading: false })
+                    } else {
+                        this.setState({ checkedOut: true });
+                    }
                 }
+    
+            } catch (e) {
+                console.log(e);
+                alert(`${process.env.REACT_APP_SCOOTER_TERM} not available or invalid ${process.env.REACT_APP_SCOOTER_TERM} ID!`)
+                this.setState({ isLoading: false });
             }
-
-        } catch (e) {
+        } catch(e) {
             console.log(e);
-            alert(`${process.env.REACT_APP_SCOOTER_TERM} not available or invalid ${process.env.REACT_APP_SCOOTER_TERM} ID!`)
-            this.setState({ isLoading: false });
         }
     }
 
@@ -83,6 +87,35 @@ export default class Scan extends Component {
         });
     }
 
+    getLocation = () => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.logPosition, this.showError);
+        } else { 
+            alert("Geolocation is not supported by this browser. - Geolocation is required to check out a creature");
+        }
+    }
+    logPosition = (pos) => {
+        console.log(pos)
+    }
+    showError = (error) => {
+        if (error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                  alert("User denied the request for Geolocation. - You have to accept sending your location in order to check out a creature.")
+                  break;
+                case error.POSITION_UNAVAILABLE:
+                  alert("Location information is unavailable. - Location data required to check out a creature")
+                  break;
+                case error.TIMEOUT:
+                  console.log("The request to get user location timed out. - You have to accept sending your location in order to check out a creature.")
+                  break;
+                case error.UNKNOWN_ERROR:
+                  alert("An unknown error occurred.")
+                  break;
+            }
+        }
+      }
+
     render() {
         return (
             <div>
@@ -91,7 +124,7 @@ export default class Scan extends Component {
                     <Col sm="12" md={{ size: 4, offset: 4 }}>
                     {
                         this.state.rideStarted 
-                        ? <Fragment>
+                     ? <Fragment>
                                 <Stopwatch scooterId={this.state.code} />
                         </Fragment>
                         : this.state.checkedOut 

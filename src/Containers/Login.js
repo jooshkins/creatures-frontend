@@ -72,7 +72,7 @@ export default class Login extends Component {
                                         type="password"
                                         name="password"
                                         id="password"
-                                        placeholder="8 characters, 1 capital, 1 number, 1 special"
+                                        placeholder="8 characters, 1 capital, 1 number, 1 symbol"
                                         value={this.state.password}
                                         onChange={this.handleChange}
                                     />
