@@ -35,7 +35,7 @@ export default class Stopwatch extends Component {
     this.timerRef = null;
   }
 
-  updateTimer(extraTime) {
+  updateTimer(extraTime) { // calculate time based on date function
     const { time } = this.state;
     this.setState({ time: time + extraTime });
   }

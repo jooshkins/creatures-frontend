@@ -28,7 +28,7 @@ export default class Scan extends Component {
     }
 
     validateForm() {
-        return this.state.code.length === 4;
+        return this.state.code.length === 6;
     }
 
     handleScan = scan => {
@@ -151,9 +151,9 @@ export default class Scan extends Component {
                                             name="code"
                                             id="code"
                                             value={this.state.code}
-                                            maxLength={4}
+                                            maxLength={6}
                                             onChange={this.handleChange}
-                                            placeholder={`4 character ${process.env.REACT_APP_SCOOTER_TERM} ID`}
+                                            placeholder={`6 character ${process.env.REACT_APP_SCOOTER_TERM} ID`}
                                         />
                                     </InputGroup>
                                     <Modal isOpen={this.state.modal} toggle={this.toggle}>
