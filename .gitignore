@@ -29,5 +29,7 @@ yarn-error.log*
 /.sass-cache
 *.map
 /src/index.css.map
+
+.env
 src/index.css.map
-src/index.css.map
+*.map
