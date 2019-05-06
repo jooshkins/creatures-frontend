@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    document.title = process.env.REACT_APP_TITLE
+    document.title = "Creatures"
     try {
       if (await Auth.currentSession()) {
         this.userHasAuthenticated(true);
