@@ -3,7 +3,6 @@
     "questions": [
         "Free?",
         "Do I have to donate?",
-        "Can I steal the scooter?",
         "Why are you doing this?",
         "How do I unlock the scooter?",
         "What do I do at the end of the ride?",
@@ -13,14 +12,13 @@
     "answers": [
         "Yep, totally free.",
         "Nope, we would like you to but you are not obligated.",
-        "?",
-        "?",
-        "?",
-        "?",
-        "?",
-        "?"
+        "For fun.",
+        "Either scan the QR code, or enter the code under the QR code.",
+        "Park your scooter somewhere safe.",
+        "Please send an email to: josh@joshuasheridan.com",
+        "Tell your friends and enemies, also the project is open source, so you are welcome to improve the project."
     ],
-    "freeTxt": "Yep, free. Rides are capped at 20 mins and you can ride every 2 hours. We ask that you make a donation at the end of your ride, but you don't have to.",
+    "freeTxt": "Yep, free. Rides are capped at 15 mins and you can ride every 2 hours. We ask that you make a donation at the end of your ride, but you don't have to.",
     "OSTxt": "The plans and source code for this project are completely open and free to use. Go ahead and start your own scooter share.",
     "charityTxt": "At the end of your ride, you can choose which charity you would like your donation to go to."
 }

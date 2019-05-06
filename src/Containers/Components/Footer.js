@@ -10,8 +10,8 @@ export default () => {
                     <NavLink href="/login">Login</NavLink>
                     <NavLink href="/scan">Ride</NavLink>
                     <NavLink href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}?Subject=Scooters!`} target="_top">Contact</NavLink>
-                    <NavLink href="/privacy">Privacy Policy</NavLink>
-                    <NavLink href="/terms">Terms of Service</NavLink>
+                    {/* <NavLink href="/privacy">Privacy Policy</NavLink>
+                    <NavLink href="/terms">Terms of Service</NavLink> */}
                 </Nav>
             </Col>
         </Row>
